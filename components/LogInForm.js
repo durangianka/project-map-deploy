@@ -84,12 +84,7 @@ function LogInForm() {
         });
         const data = await res.json();
         if (data.result === true) {
-            Router.push({
-                pathname: '/home',
-                query: {
-                    user: data.return.token
-                }
-            })
+            Router.push('/home')
         } else {
             setLoginError(false);
             document.getElementById("input-email").value = "";

@@ -1,10 +1,11 @@
+import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Map from '../components/Map'
 import ProfileWidget from '../components/ProfileWidget'
+import Router from 'next/router'
 
 
-export default function Home({ chargingStations, user, drivers }) {
-
+export default function home({ chargingStations, user, drivers }) {
 
     return (
         <div className=" h-screen w-full flex flex-col">
@@ -18,9 +19,9 @@ export default function Home({ chargingStations, user, drivers }) {
 
 export async function getServerSideProps() {
 
-    const res = await fetch(`http://${process.env.server}/api/getChargingStations`);
-    const result = await fetch(`http://${process.env.server}/api/getProfileInfo`);
-    const request = await fetch(`http://${process.env.server}/api/getDriversRoute`)
+    const res = await fetch('http://https://project-map-deploy.vercel.app//api/getChargingStations');
+    const result = await fetch('http://https://project-map-deploy.vercel.app//api/getProfileInfo');
+    const request = await fetch('http://https://project-map-deploy.vercel.app//api/getDriversRoute')
     const data = await res.json();
     const user = await result.json();
     const drivers = await request.json();
