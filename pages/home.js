@@ -1,30 +1,10 @@
-import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Map from '../components/Map'
 import ProfileWidget from '../components/ProfileWidget'
-import Router from 'next/router'
 
 
 export default function Home({ chargingStations, user, drivers }) {
 
-    useEffect(() => {
-        if (Router.query) {
-            const param = Router.query
-            fetch('/api/authentication', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(param)
-            })
-                .then(res => res.json())
-                .then(res => {
-                    if (!res.result) return Router.push('/')
-                })
-        } else {
-            Router.push('/')
-        }
-    }, [])
 
     return (
         <div className=" h-screen w-full flex flex-col">
