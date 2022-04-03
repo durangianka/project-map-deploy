@@ -38,9 +38,9 @@ export default function home({ chargingStations, user, drivers }) {
 
 export async function getServerSideProps() {
 
-    const res = await fetch('http://localhost:3000/api/getChargingStations');
-    const result = await fetch('http://localhost:3000/api/getProfileInfo');
-    const request = await fetch('http://localhost:3000/api/getDriversRoute')
+    const res = await fetch(`http://${process.env.server}/api/getChargingStations`);
+    const result = await fetch(`http://${process.env.server}/api/getProfileInfo`);
+    const request = await fetch(`http://${process.env.server}/api/getDriversRoute`)
     const data = await res.json();
     const user = await result.json();
     const drivers = await request.json();
