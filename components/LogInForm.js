@@ -71,7 +71,6 @@ function LogInForm() {
 
     const loginSubmit = async (e) => {
         e.preventDefault();
-        console.log("calling log-in API")
         const email = document.getElementById("input-email").value;
         const password = document.getElementById("input-password").value;
         const user = { email, password }
