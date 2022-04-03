@@ -5,7 +5,7 @@ import ProfileWidget from '../components/ProfileWidget'
 import Router from 'next/router'
 
 
-export default function home({ chargingStations, user, drivers }) {
+export default function Home({ chargingStations, user, drivers }) {
 
     useEffect(() => {
         if (Router.query) {
